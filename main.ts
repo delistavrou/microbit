@@ -1,6 +1,5 @@
-input.onButtonPressed(Button.AB, function () {
-    αποτέλεσμα = 0
-})
+let ψηφίο = 0
+let επιλογήτελεστή = 0
 input.onButtonPressed(Button.A, function () {
     ψηφίο = randint(0, 9)
     basic.showString("" + (ψηφίο))
@@ -8,16 +7,13 @@ input.onButtonPressed(Button.A, function () {
 input.onButtonPressed(Button.B, function () {
     επιλογήτελεστή = randint(0, 4)
     if (επιλογήτελεστή == 0) {
-        basic.showString("" + (τελεστής[0]))
-        αποτέλεσμα = αποτέλεσμα + ψηφίο
+        basic.showString("+")
     }
     if (επιλογήτελεστή == 1) {
-        basic.showString("" + (τελεστής[1]))
-        αποτέλεσμα = αποτέλεσμα - ψηφίο
+        basic.showString("-")
     }
     if (επιλογήτελεστή == 2) {
-        basic.showString("" + (τελεστής[2]))
-        αποτέλεσμα = αποτέλεσμα * ψηφίο
+        basic.showString("x")
     }
     if (επιλογήτελεστή == 3) {
         basic.showLeds(`
@@ -27,27 +23,8 @@ input.onButtonPressed(Button.B, function () {
             . . . . .
             . . # . .
             `)
-        αποτέλεσμα = αποτέλεσμα / ψηφίο
     }
     if (επιλογήτελεστή == 4) {
-        basic.showString("" + (τελεστής[4]))
-        αποτέλεσμα = αποτέλεσμα
-        basic.pause(5000)
-        for (let index = 0; index < 3; index++) {
-            basic.showString("=")
-            basic.showNumber(αποτέλεσμα)
-        }
+        basic.showString("=")
     }
 })
-let επιλογήτελεστή = 0
-let ψηφίο = 0
-let αποτέλεσμα = 0
-let τελεστής: string[] = []
-τελεστής = [
-"+",
-"-",
-"*",
-":",
-"="
-]
-αποτέλεσμα = 0
